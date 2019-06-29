@@ -4,16 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SecondComponent } from './second/second.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SecondComponent
+    SecondComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: '', component: AppComponent },
+      { path: '', component: HomeComponent },
       { path: 'second', component: SecondComponent },
     ])
   ],
