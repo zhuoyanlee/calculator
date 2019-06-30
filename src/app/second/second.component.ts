@@ -18,11 +18,11 @@ export class SecondComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private store: Store<any>,
+    private store: Store<State>,
     
   ) { 
     
-    this.count$ = this.store.pipe(select(selectLastCounter));
+   
   }
   decrement(): void {
     this.store.dispatch(new DecrementCounters());
@@ -31,6 +31,7 @@ export class SecondComponent implements OnInit {
     this.store.dispatch(new IncrementCounters());
  }
   ngOnInit() {
+    this.count$ = this.store.pipe(select(selectLastCounter));
   }
   
 }

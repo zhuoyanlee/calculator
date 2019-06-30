@@ -10,6 +10,11 @@ import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'second', component: SecondComponent },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,10 +23,7 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'second', component: SecondComponent },
-    ]),
+    RouterModule.forRoot(routes),
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })

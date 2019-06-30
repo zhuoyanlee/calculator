@@ -2,10 +2,10 @@
     <a href="#accordion-default" class="au-accordion__title js-au-accordion" aria-controls="accordion-default" aria-expanded="true" role="tab" onclick="return AU.accordion.Toggle( this )">Wuhuu design system</a>
     <div class="au-accordion__body" id="accordion-default">
       <div class="au-accordion__body-wrapper">
-        <a (click)="decrement()">Decrement</a>
+        <a (click)="decrement()">Decrement</a> <br />
         <a (click)="increment()">Increment</a>
       </div>
-      {count$}
+      Count: {{ count$ | async }}
     </div>
   </section>
 
